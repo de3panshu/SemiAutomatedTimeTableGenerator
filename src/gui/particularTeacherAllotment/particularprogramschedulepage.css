@@ -1,0 +1,114 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+*
+{
+	-fx-text-fill:#fff;
+}
+.root
+{
+	-fx-background-color:#0e0e15;
+}
+.gridPane Line
+{
+	-fx-stroke:#000;
+}
+
+.tab-pane .tab-header-area .tab-header-background, .menubar
+{
+	-fx-background-color:#000;
+}
+.tab-pane .tab, .homeButton, .toggleButton
+{
+	-fx-background-color:#000;
+	-fx-border-radius:100;
+	-fx-background-radius:100;
+	-fx-border-color:#fff;
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+}
+.tab-pane .tab:selected, .tab-pane .tab:hover,.homeButton:hover, .toggleButton:hover, .toggleButton:selected
+{
+	-fx-border-color:#00b3ff;
+}
+.tab-label
+{
+	-fx-text-fill:white;
+}
+.glyph-icon
+{
+	-fx-fill:#fff;
+}
+.tab-pane .tab:selected .tab-label, .tab-pane .tab:hover .tab-label
+{                                                                                                                                                                                        
+	-fx-text-fill:#00b3ff;
+}
+.tab-pane .tab:selected .glyph-icon, .tab-pane .tab:hover .glyph-icon,.homeButton:hover .glyph-icon, .toggleButton:hover .glyph-icon,
+.toggleButton:selected .glyph-icon
+{
+	-fx-fill:#00b3ff;
+}
+.resetButton, .cancelButton
+{
+	-fx-background-color:tomato;
+	-fx-text-fill:#000;
+}
+.submitButton
+{
+	-fx-background-color:lightgreen;
+	-fx-text-fill:#000;
+}
+.resetButton:hover, .cancelButton:hover
+{
+	-fx-background-color:red;
+	-fx-text-fill:#fff;
+}
+.submitButton:hover 
+{
+	-fx-background-color:darkgreen;
+	-fx-text-fill:#fff;
+}
+.combo-box
+{
+	-fx-background-color:black;
+	-fx-text-fill:red;
+}
+.combo-box > .text-field, .combo-box-base .arrow-button
+{
+	-fx-background-color:black;
+	-fx-text-fill:lightgreen;
+}
+
+.combo-box  .list-view .list-cell
+{
+	-fx-background-color:#000;
+	-fx-text-fill:#fff;
+        
+        -fx-border-width:1px;
+        -fx-border-color:blue;
+        -fx-border-style:solid;
+}
+.combo-box  .list-view .list-cell:hover,.combo-box  .list-view .list-cell:selected/*use selected if it is not working*/
+{
+	-fx-background-color:blue;
+	-fx-text-fill:cyan;
+}
+.colData,.crossButton{
+    -fx-text-fill:#66ff66;
+    -fx-alignment:center;
+    -fx-padding:5px;
+    -fx-font-size:16px;
+    
+}
+.crossButton,.crossButton:selected
+{
+    -fx-background-color:transparent;
+    -fx-text-fill:#ff9999;
+    -fx-margin:0px;
+    -fx-border-width:0;
+}
+.crossButton:hover{
+    
+    -fx-text-fill:red;
+}

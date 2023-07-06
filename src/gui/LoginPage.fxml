@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXClippedPane?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<JFXClippedPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="733.0" stylesheets="@resources/style_dark.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginPageController">
+   <children>
+      <ImageView fx:id="bgImage" fitHeight="491.0" fitWidth="742.0" pickOnBounds="true">
+         <image>
+            <Image url="@resources/loginBG.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="600.0" style="-fx-background-color: rgba(23,23,23,.7);">
+         <children>
+            <Text fx:id="welcomeText" fill="WHITE" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="3.0" text="Welcome To TimeTable Maker" textAlignment="CENTER" wrappingWidth="600.0000048577785">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="settingContent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="114.0" fitWidth="176.0" focusTraversable="true" layoutX="245.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/app_icon02.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="oldUsername" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="188.0" prefHeight="45.0" prefWidth="482.0" promptText="Old Username" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="oldPassword" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="258.0" prefHeight="45.0" prefWidth="482.0" promptText="Old Password" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXTextField fx:id="newUsername" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="344.0" prefHeight="45.0" prefWidth="482.0" promptText="New Username" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="newPassword" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="415.0" prefHeight="45.0" prefWidth="482.0" promptText="New Password" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXPasswordField fx:id="newPasswordConfirm" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="484.0" prefHeight="45.0" prefWidth="482.0" promptText="Confirm New Password" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="arrowButton" layoutX="536.0" layoutY="56.0" onAction="#backButtonActionEvent" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="back" fill="#0dfff7" glyphName="ARROW_CIRCLE_RIGHT" size="28.0" wrappingWidth="26.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="saveButton" buttonType="RAISED" layoutX="150.0" layoutY="558.0" onAction="#saveButtonActionEvent" prefHeight="37.0" prefWidth="112.0" ripplerFill="#00ff1a" style="-fx-background-color: green;" styleClass="saveButton" text="Save" textFill="#d5f0d8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#d3cece" glyphName="SAVE" size="28" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="backButton" buttonType="RAISED" layoutX="350.0" layoutY="558.0" onAction="#backButtonActionEvent" prefHeight="37.0" prefWidth="112.0" ripplerFill="RED" style="-fx-background-color: darkred;" styleClass="cancelButton" text="Cancel" textFill="#f1d6d6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#d7d3d3" glyphName="CLOSE" size="28" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXTextField fx:id="username" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="245.0" prefHeight="45.0" prefWidth="482.0" promptText="Username" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="password" focusColor="#4af815" labelFloat="true" layoutX="59.0" layoutY="342.0" prefHeight="45.0" prefWidth="482.0" promptText="Password" style="-fx-prompt-text-fill: #fff; -fx-text-fill: #99d086;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="150.0" layoutY="558.0" onAction="#loginButtonActionEvent" prefHeight="37.0" prefWidth="112.0" ripplerFill="#00ff1a" text="Login" textFill="#d5f0d8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="LOGIN" size="22" styleClass="icons" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="loginButton" />
+                        <String fx:value="customButton" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton fx:id="cancelButton" buttonType="RAISED" layoutX="350.0" layoutY="558.0" onAction="#cancelButtonActionEvent" prefHeight="37.0" prefWidth="112.0" ripplerFill="RED" text="Cancel" textFill="#f1d6d6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="cancelButton" />
+                        <String fx:value="customButton" />
+                     </styleClass>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="WINDOW_CLOSE" size="22" styleClass="icons" />
+                     </graphic>
+                  </JFXButton>
+                  <Text fill="WHITE" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="3.0" text="Developed By: &#10;Deepanshu Sahu&#10;(20MCA022)" textAlignment="CENTER" wrappingWidth="146.00000485777855">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="gearButton" layoutX="536.0" layoutY="56.0" onAction="#settingButtonActionEvent" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="gear" fill="#0dfff7" glyphName="GEAR" size="28.0" wrappingWidth="26.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</JFXClippedPane>

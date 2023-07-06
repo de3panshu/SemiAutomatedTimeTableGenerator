@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minViewportHeight="700.0" minViewportWidth="1200.0" minWidth="-Infinity" pannable="true" prefHeight="700.0" prefWidth="1200.0" styleClass="root" stylesheets="@resources/style_light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DashBoardController">
+   <content>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1300.0" styleClass="root">
+            <left>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="1000.0" prefWidth="236.0" spacing="15.0" styleClass="sidebars" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="courseButton" buttonType="RAISED" ellipsisString="" graphicTextGap="5.0" onAction="#courseButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Course                   " VBox.vgrow="ALWAYS">
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GRADUATION_CAP" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="subjectButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#subjectButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Subject                 " VBox.vgrow="ALWAYS">
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BOOK" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="teacherButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#teacherButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Teacher                ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USERS" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="venueButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#venueButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Venue                   ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BUILDING" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="subjectAllotmentButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#subjectAllotmentButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Subject Allotment ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CHAIN" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="teacherAllotmentButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#teacherAllotmentButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Teacher Allotment">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="EMPIRE" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="combineClassButton" buttonType="RAISED" ellipsisString="" graphicTextGap="5.0" onAction="#combineClassButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Combine Classes     ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="COMPRESS" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="timetableButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#tiimeTableButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Time Table            ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="teacherLoadButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#teacherLoadButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Teacher Load       ">
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BAR_CHART" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="printButton" buttonType="RAISED" graphicTextGap="5.0" onAction="#printButtonActionEvent" prefHeight="24.0" prefWidth="400.0" styleClass="sidebarsBtn" text="Print                      ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PRINT" size="22" styleClass="sidebarsIcons" />
+                     </graphic>
+                     <effect>
+                        <GaussianBlur />
+                     </effect>
+                  </JFXButton>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+        </left>
+         <center>
+            <StackPane fx:id="mainWindow" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </content>
+</ScrollPane>

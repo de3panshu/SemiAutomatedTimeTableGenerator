@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fx:id="root" fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minViewportHeight="768.0" minViewportWidth="1300.0" minWidth="-Infinity" prefHeight="980.0" stylesheets="@programtimetable.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.print.ProgramTimeTableController">
+   <content>
+      <BorderPane minHeight="1000.0" minWidth="-Infinity" styleClass="root">
+         <top>
+            <GridPane hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="menubar" BorderPane.alignment="TOP_LEFT">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printAllButtonAction" prefWidth="150.0" styleClass="printButton" text="Save All" GridPane.columnIndex="4">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FLOPPY_ALT" size="22" />
+                     </graphic></Button>
+                  <Button maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetButtonAction" prefWidth="150.0" styleClass="resetButton" text="Reset" GridPane.columnIndex="6">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="REPEAT" size="22" />
+                     </graphic></Button>
+                  <ComboBox fx:id="programNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Program" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="venueNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Venue" GridPane.columnIndex="3" />
+                  <ComboBox fx:id="teacherNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Teacher" GridPane.columnIndex="2" />
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonEvent" prefHeight="31.0" prefWidth="118.0" styleClass="homeButton">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="22" />
+                     </graphic>
+                  </Button>
+                  <Button maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sendAllButtonAction" prefWidth="150.0" styleClass="printButton" text="Send All" GridPane.columnIndex="5">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="GMAIL" size="28" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </top>
+         <center>
+            <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="800.0" styleClass="tabPane" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="150.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="programTab" text="active program">
+                     <content>
+                        <TabPane fx:id="timeTableTabPane" maxHeight="1.7976931348623157E308" prefHeight="980.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="0.0" tabMaxWidth="0.0" tabMinWidth="150.0">
+                          <tabs>
+                            <Tab fx:id="slot8tab" text="For 45 min Class">
+                                 <content>
+                                    <GridPane fx:id="program8TimeTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #0e0e15;">
+                                      <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:25-1:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:35-5:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell0" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot8cell1" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot8cell2" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot8cell3" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot8cell4" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot8cell5" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot8cell6" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot8cell7" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot8cell8" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot8cell9" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot8cell10" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot8cell11" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot8cell12" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot8cell13" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot8cell14" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot8cell15" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot8cell16" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot8cell17" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot8cell18" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot8cell19" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot8cell20" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextArea fx:id="slot8cell21" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <TextArea fx:id="slot8cell22" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                          <TextArea fx:id="slot8cell23" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                          <TextArea fx:id="slot8cell24" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                          <TextArea fx:id="slot8cell25" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell26" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell27" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell28" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell29" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot8cell30" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot8cell31" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot8cell32" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot8cell33" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot8cell34" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot8cell35" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                          <TextArea fx:id="slot8cell36" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                          <TextArea fx:id="slot8cell37" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                          <TextArea fx:id="slot8cell38" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                                          <TextArea fx:id="slot8cell39" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                                          <TextArea fx:id="slot8cell40" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                          <TextArea fx:id="slot8cell41" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                          <TextArea fx:id="slot8cell42" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                                          <TextArea fx:id="slot8cell43" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                                          <TextArea fx:id="slot8cell44" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </content>
+                              </Tab>
+                            <Tab fx:id="slot12tab" text="For 1hr Class">
+                                 <content>
+                                    <GridPane fx:id="program12TimeTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #0e0e15;">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell0" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot12cell1" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot12cell2" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot12cell3" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot12cell4" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <TextArea fx:id="slot12cell5" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot12cell6" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot12cell7" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot12cell8" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot12cell9" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <TextArea fx:id="slot12cell10" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot12cell11" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot12cell12" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot12cell13" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot12cell14" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                          <TextArea fx:id="slot12cell15" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot12cell16" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot12cell17" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot12cell18" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot12cell19" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                          <TextArea fx:id="slot12cell20" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell21" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell22" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell23" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell24" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="slot12cell25" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot12cell26" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot12cell27" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot12cell28" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot12cell29" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                          <TextArea fx:id="slot12cell30" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot12cell31" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot12cell32" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot12cell33" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                          <TextArea fx:id="slot12cell34" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </content></Tab>
+                          </tabs>
+                        </TabPane>
+                     </content>
+                  </Tab>
+                <Tab text="active Teacher">
+                     <content>
+                        <GridPane fx:id="teacherTimeTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #0e0e15;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:25-1:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:35-5:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t0" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextArea fx:id="t1" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextArea fx:id="t2" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea fx:id="t3" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <TextArea fx:id="t4" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <TextArea fx:id="t5" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextArea fx:id="t6" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextArea fx:id="t7" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <TextArea fx:id="t8" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <TextArea fx:id="t9" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <TextArea fx:id="t10" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextArea fx:id="t11" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <TextArea fx:id="t12" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextArea fx:id="t13" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <TextArea fx:id="t14" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <TextArea fx:id="t15" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextArea fx:id="t16" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextArea fx:id="t17" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextArea fx:id="t18" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <TextArea fx:id="t19" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <TextArea fx:id="t20" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextArea fx:id="t21" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <TextArea fx:id="t22" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <TextArea fx:id="t23" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <TextArea fx:id="t24" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <TextArea fx:id="t25" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t26" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t27" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t28" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t29" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <TextArea fx:id="t30" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <TextArea fx:id="t31" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <TextArea fx:id="t32" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <TextArea fx:id="t33" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <TextArea fx:id="t34" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <TextArea fx:id="t35" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <TextArea fx:id="t36" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <TextArea fx:id="t37" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <TextArea fx:id="t38" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <TextArea fx:id="t39" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <TextArea fx:id="t40" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <TextArea fx:id="t41" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <TextArea fx:id="t42" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <TextArea fx:id="t43" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <TextArea fx:id="t44" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content></Tab>
+                  <Tab text="active venue">
+                     <content>
+                        <GridPane fx:id="venueTimeTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #0e0e15;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:25-1:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:35-5:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v0" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextArea fx:id="v1" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextArea fx:id="v2" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea fx:id="v3" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <TextArea fx:id="v4" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <TextArea fx:id="v5" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextArea fx:id="v6" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextArea fx:id="v7" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <TextArea fx:id="v8" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <TextArea fx:id="v9" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <TextArea fx:id="v10" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextArea fx:id="v11" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <TextArea fx:id="v12" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextArea fx:id="v13" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <TextArea fx:id="v14" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <TextArea fx:id="v15" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextArea fx:id="v16" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextArea fx:id="v17" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextArea fx:id="v18" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <TextArea fx:id="v19" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <TextArea fx:id="v20" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextArea fx:id="v21" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <TextArea fx:id="v22" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <TextArea fx:id="v23" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <TextArea fx:id="v24" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <TextArea fx:id="v25" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v26" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v27" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v28" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v29" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <TextArea fx:id="v30" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <TextArea fx:id="v31" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <TextArea fx:id="v32" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <TextArea fx:id="v33" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <TextArea fx:id="v34" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <TextArea fx:id="v35" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <TextArea fx:id="v36" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <TextArea fx:id="v37" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <TextArea fx:id="v38" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <TextArea fx:id="v39" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <TextArea fx:id="v40" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <TextArea fx:id="v41" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <TextArea fx:id="v42" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <TextArea fx:id="v43" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <TextArea fx:id="v44" prefHeight="200.0" prefWidth="200.0" styleClass="slotCell" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content></Tab>
+                            <Tab text="Graph">
+                     <content>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <GridPane hgap="3.0" minHeight="-Infinity" style="-fx-background-color: #0e0e15;" styleClass="gridPane" vgap="3.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="82.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="50.0" prefHeight="82.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <BarChart fx:id="graph" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" tickLabelFill="#41abb0" fx:id="xAxis" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="yAxis" side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+              </tabs>
+                                   
+        <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </TabPane>
+         </center>
+         <right>
+            <VBox fillWidth="false" prefHeight="860.0" prefWidth="113.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#printProgramButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="printButton" text="Program">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FLOPPY_ALT" size="22" />
+                     </graphic>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#printTeacherButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="printButton" text="Teacher">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FLOPPY_ALT" size="22" />
+                     </graphic>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#printVenueButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="printButton" text="Venue">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FLOPPY_ALT" size="22" />
+                     </graphic>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#sendTeacherButtonAction" prefHeight="50.0" prefWidth="120.0" styleClass="printButton" text="Send">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="GMAIL" size="28" />
+                     </graphic>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" top="100.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+      </BorderPane>
+   </content>
+</ScrollPane>

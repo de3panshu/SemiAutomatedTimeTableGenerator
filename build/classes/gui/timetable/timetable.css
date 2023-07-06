@@ -1,0 +1,117 @@
+*
+{
+	-fx-text-fill:#fff;
+}
+.root
+{
+    -fx-background-color:#0e0e15;
+}
+.menubar
+{
+    -fx-background-color:#131629;/*linear-gradient(#242729 50%,#000 100%)*/;
+}
+.glyph-icon
+{
+	-fx-fill:#fff;
+}
+.combo-box, .text-field
+{
+	-fx-background-color:black;
+	-fx-text-fill:lightgreen;
+}
+.combo-box > .text-field, .combo-box-base .arrow-button
+{
+	-fx-background-color:black;
+	-fx-text-fill:lightgreen;
+}
+
+.combo-box  .list-view .list-cell
+{
+	-fx-background-color:#000;
+	-fx-text-fill:#fff;
+        
+        -fx-border-width:1px;
+        -fx-border-color:blue;
+        -fx-border-style:solid;
+}
+.combo-box  .list-view .list-cell:hover,.combo-box  .list-view .list-cell:selected/*use selected if it is not working*/
+{
+	-fx-background-color:blue;
+	-fx-text-fill:cyan;
+}
+.autoArrangeButton
+{
+	-fx-background-color:linear-gradient(#4cdbda 50%,#014f4f 100%);
+	-fx-background-radius:10px;
+	-fx-text-fill:#000;
+}
+.autoArrangeButton:hover
+{
+	-fx-background-color:linear-gradient(#014f4f 50%,#4cdbda 100%);
+	-fx-text-fill:#fff;
+}
+.submitButton
+{
+	-fx-background-color:linear-gradient(lightgreen 50%,darkgreen 100%);
+	-fx-background-radius:10px;
+	-fx-text-fill:#000;
+}
+.submitButton:hover
+{
+	-fx-background-color:linear-gradient(darkgreen 50%,lightgreen 100%);
+	-fx-text-fill:#fff;
+}
+.tab-pane .tab-header-area .tab-header-background
+{
+	-fx-background-color:#000;
+}
+.tab-pane .tab, .homeButton, .toggleButton
+{
+	-fx-background-color:#000;
+	-fx-border-radius:100;
+	-fx-background-radius:100;
+	-fx-border-color:#fff;
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+}
+.tab-pane .tab:selected, .tab-pane .tab:hover,.homeButton:hover, .toggleButton:hover, .toggleButton:selected
+{
+	-fx-border-color:#00b3ff;
+}
+.tab-label
+{
+	-fx-text-fill:white;
+}
+.stickerButton
+{
+	-fx-background-color:#000;
+	-fx-border-color:cyan;
+	-fx-border-width:1px;
+	-fx-text-fill:#fff;
+}
+.stickerButton:hover
+{
+	-fx-text-fill:lightgreen;
+        -fx-border-width:2;
+	
+}
+.periodLabel{
+    -fx-background-color:#003366;
+    -fx-text-fill:#00ffff;
+    -fx-border-radius:30;
+    -fx-background-radius:30;
+}
+.slotCell
+{
+    -fx-border-width:1;
+    -fx-border-color:#FFF8;
+    -fx-text-fill:#FFF;
+    -fx-background-color:transparent;
+}
+.feasibleSlotCell
+{
+    -fx-text-fill:#fff;
+    -fx-background-color:rgba(0,255,255,.3);
+    -fx-border-color:cyan;
+    
+}

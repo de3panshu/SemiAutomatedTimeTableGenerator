@@ -1,0 +1,27 @@
+.customButton
+{
+    -fx-width:110px;
+    -fx-height:40px;
+    -fx-background-radius:50px;
+    -fx-text-alignment:center;
+    
+}
+
+.loginButton
+{
+    -fx-background-color:green;
+}
+.loginButton:hover{
+    -fx-background-color:#58c963;
+}
+.cancelButton
+{
+    -fx-background-color:darkred;
+}
+.cancelButton:hover{
+    -fx-background-color:#d35555;
+}
+.icons
+{
+    -fx-fill:#FFf1f1;
+}

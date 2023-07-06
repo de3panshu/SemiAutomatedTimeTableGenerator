@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minViewportHeight="768.0" minViewportWidth="1300.0" minWidth="-Infinity" prefHeight="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.timetable.TimeTableController">
+   <content>
+      <BorderPane minHeight="1000.0" minWidth="-Infinity" styleClass="root" stylesheets="@timetable.css">
+         <top>
+            <GridPane hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="menubar" BorderPane.alignment="TOP_LEFT">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="submitButton" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitButtonAction" prefWidth="150.0" styleClass="submitButton" text="Submit" GridPane.columnIndex="4" />
+                  <ComboBox fx:id="programNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Program" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="venueNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Venue" GridPane.columnIndex="3" />
+                  <ComboBox fx:id="teacherNameComboBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Select Teacher" GridPane.columnIndex="2" />
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonEvent" prefHeight="31.0" prefWidth="118.0" styleClass="homeButton">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="22" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </top>
+         <right>
+            <GridPane hgap="5.0" styleClass="stickerRegion" vgap="5.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="110.0" valignment="TOP" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="3.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label fx:id="stickerLabel0" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Label fx:id="stickerLabel1" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="stickerLabel2" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="stickerLabel3" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="stickerLabel4" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Label fx:id="stickerLabel5" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="stickerLabel6" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="stickerLabel7" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label fx:id="stickerLabel8" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label fx:id="stickerLabel9" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label fx:id="stickerLabel10" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="3" />
+                  <Label fx:id="stickerLabel11" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="stickerLabel12" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="stickerLabel13" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label fx:id="stickerLabel14" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label fx:id="stickerLabel15" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="4" />
+                  <Label fx:id="stickerLabel16" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="stickerLabel17" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="stickerLabel18" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label fx:id="stickerLabel19" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Label fx:id="stickerLabel20" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="5" />
+                  <Label fx:id="stickerLabel21" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="stickerLabel22" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label fx:id="stickerLabel23" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Label fx:id="stickerLabel24" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <Label fx:id="stickerLabel25" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="6" />
+                  <Label fx:id="stickerLabel26" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="stickerLabel27" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label fx:id="stickerLabel28" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label fx:id="stickerLabel29" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <Label fx:id="stickerLabel30" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="7" />
+                  <Label fx:id="stickerLabel31" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="stickerLabel32" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label fx:id="stickerLabel33" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Label fx:id="stickerLabel34" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                  <Label fx:id="stickerLabel35" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="8" />
+                  <Label fx:id="stickerLabel36" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label fx:id="stickerLabel37" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <Label fx:id="stickerLabel38" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <Label fx:id="stickerLabel39" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <Label fx:id="stickerLabel40" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.rowIndex="9" />
+                  <Label fx:id="stickerLabel41" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label fx:id="stickerLabel42" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label fx:id="stickerLabel43" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <Label fx:id="stickerLabel44" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="stickerButton" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                  <Label fx:id="newLabel" alignment="CENTER" contentDisplay="CENTER" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" opacity="0.0" prefHeight="89.0" prefWidth="421.0" style="-fx-border-width: 2; -fx-border-color: cyan;" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="89.0" prefWidth="130.0" text="New Cell--&gt;" textAlignment="CENTER" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </right>
+         <center>
+            <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="800.0" styleClass="tabPane" tabMaxWidth="150.0" tabMinWidth="150.0" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="programTab" text="active program">
+                     <content>
+                        <TabPane fx:id="timeTableTabPane" maxHeight="1.7976931348623157E308" prefHeight="980.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="0.0" tabMaxWidth="0.0" tabMinWidth="150.0">
+                          <tabs>
+                            <Tab fx:id="slot8tab" text="For 45 min Class">
+                                 <content>
+                                    <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                      <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 12:50pm - 2:10pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:00-9:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:45-10:25&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:30-11:10&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:15-11:55&#10;am" textAlignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:00-12:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;3:00-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:25&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:20-5:00&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:15-2:55&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell0" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot8cell1" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot8cell2" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot8cell3" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot8cell4" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot8cell5" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot8cell6" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot8cell7" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot8cell8" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot8cell9" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot8cell10" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot8cell11" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot8cell12" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot8cell13" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot8cell14" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot8cell15" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot8cell16" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot8cell17" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot8cell18" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot8cell19" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot8cell20" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="slot8cell21" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Label fx:id="slot8cell22" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                          <Label fx:id="slot8cell23" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                          <Label fx:id="slot8cell24" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                          <Label fx:id="slot8cell25" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell26" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell27" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell28" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell29" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot8cell30" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot8cell31" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot8cell32" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot8cell33" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot8cell34" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot8cell35" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                          <Label fx:id="slot8cell36" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                          <Label fx:id="slot8cell37" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                                          <Label fx:id="slot8cell38" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                                          <Label fx:id="slot8cell39" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                                          <Label fx:id="slot8cell40" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                          <Label fx:id="slot8cell41" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                          <Label fx:id="slot8cell42" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                                          <Label fx:id="slot8cell43" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                                          <Label fx:id="slot8cell44" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </content>
+                              </Tab>
+                            <Tab fx:id="slot12tab" text="For 1hr Class">
+                                 <content>
+                                    <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 12:30pm - 1:30pm)" GridPane.columnSpan="6" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:00-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:50-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:50-11:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:40-12:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:20-3:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:10-4:00&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;1:30-2:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell0" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot12cell1" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot12cell2" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot12cell3" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot12cell4" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <Label fx:id="slot12cell5" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot12cell6" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot12cell7" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot12cell8" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot12cell9" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                          <Label fx:id="slot12cell10" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot12cell11" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot12cell12" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot12cell13" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot12cell14" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                                          <Label fx:id="slot12cell15" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot12cell16" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot12cell17" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot12cell18" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot12cell19" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                          <Label fx:id="slot12cell20" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell21" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell22" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell23" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell24" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                                          <Label fx:id="slot12cell25" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot12cell26" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot12cell27" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot12cell28" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot12cell29" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                                          <Label fx:id="slot12cell30" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot12cell31" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot12cell32" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot12cell33" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                          <Label fx:id="slot12cell34" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </content></Tab>
+                          </tabs>
+                        </TabPane>
+                     </content>
+                  </Tab>
+                <Tab text="active Teacher">
+                     <content>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:25-1:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:35-5:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                              <Label fx:id="t0" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="t1" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="t2" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label fx:id="t3" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label fx:id="t4" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Label fx:id="t5" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="t6" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="t7" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label fx:id="t8" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label fx:id="t9" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <Label fx:id="t10" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="t11" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="t12" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Label fx:id="t13" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label fx:id="t14" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <Label fx:id="t15" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="t16" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label fx:id="t17" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label fx:id="t18" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Label fx:id="t19" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <Label fx:id="t20" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="t21" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label fx:id="t22" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Label fx:id="t23" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <Label fx:id="t24" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <Label fx:id="t25" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label fx:id="t26" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label fx:id="t27" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <Label fx:id="t28" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <Label fx:id="t29" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <Label fx:id="t30" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label fx:id="t31" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Label fx:id="t32" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <Label fx:id="t33" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <Label fx:id="t34" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <Label fx:id="t35" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label fx:id="t36" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <Label fx:id="t37" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <Label fx:id="t38" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <Label fx:id="t39" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <Label fx:id="t40" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label fx:id="t41" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <Label fx:id="t42" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <Label fx:id="t43" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <Label fx:id="t44" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content></Tab>
+                  <Tab text="active venue">
+                     <content>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="130.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="89.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Days/period" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Monday" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Tuesday" GridPane.columnIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Wednessday" GridPane.columnIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Thursday" GridPane.columnIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="130.0" styleClass="periodLabel" text="Friday" GridPane.columnIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="737.0" styleClass="periodLabel" text="Lunch Break ( 1:20pm - 2:00pm)" GridPane.columnSpan="6" GridPane.rowIndex="6" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="I&#10;9:05-9:50&#10;am" textAlignment="CENTER" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="II&#10;9:55-10:40&#10;am" textAlignment="CENTER" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="III&#10;10:45-11:30&#10;am" textAlignment="CENTER" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IV&#10;11:35-12:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="V&#10;12:25-1:10&#10;pm" textAlignment="CENTER" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VII&#10;2:55-3:40&#10;pm" textAlignment="CENTER" GridPane.rowIndex="8" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VIII&#10;3:45-4:30&#10;pm" textAlignment="CENTER" GridPane.rowIndex="9" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="IX&#10;4:35-5:20&#10;pm" textAlignment="CENTER" GridPane.rowIndex="10" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="130.0" styleClass="periodLabel" text="VI&#10;2:05-2:50&#10;pm" textAlignment="CENTER" GridPane.rowIndex="7" />
+                              <Label fx:id="v0" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="v1" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label fx:id="v2" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label fx:id="v3" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label fx:id="v4" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Label fx:id="v5" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="v6" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="v7" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label fx:id="v8" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label fx:id="v9" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <Label fx:id="v10" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="v11" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="v12" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Label fx:id="v13" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label fx:id="v14" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <Label fx:id="v15" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="v16" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label fx:id="v17" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label fx:id="v18" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <Label fx:id="v19" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <Label fx:id="v20" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="v21" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label fx:id="v22" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Label fx:id="v23" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <Label fx:id="v24" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                              <Label fx:id="v25" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label fx:id="v26" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label fx:id="v27" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <Label fx:id="v28" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <Label fx:id="v29" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                              <Label fx:id="v30" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label fx:id="v31" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Label fx:id="v32" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <Label fx:id="v33" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <Label fx:id="v34" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                              <Label fx:id="v35" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label fx:id="v36" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <Label fx:id="v37" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                              <Label fx:id="v38" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                              <Label fx:id="v39" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                              <Label fx:id="v40" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label fx:id="v41" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <Label fx:id="v42" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                              <Label fx:id="v43" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                              <Label fx:id="v44" alignment="CENTER" maxWidth="1.7976931348623157E308" onDragDetected="#handleDragStart" onDragDropped="#handleDragDrop" onDragOver="#handleDragOver" prefHeight="89.0" prefWidth="130.0" styleClass="slotCell" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </content></Tab>
+                  <Tab text="Current Cell">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="36.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 1 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="teacher1Label" layoutX="292.0" layoutY="37.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="88.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 2 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="teacher2Label" layoutX="292.0" layoutY="89.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="140.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 3 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="teacher3Label" layoutX="292.0" layoutY="141.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="193.0" prefHeight="52.0" prefWidth="201.0" text="Course Code:" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="courseCodeLabel" layoutX="292.0" layoutY="194.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="245.0" prefHeight="52.0" prefWidth="201.0" text="Venue :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="venueLabel" layoutX="292.0" layoutY="246.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="295.0" prefHeight="52.0" prefWidth="201.0" text="Class Type :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="classTypeLabel" layoutX="292.0" layoutY="296.0" prefHeight="52.0" prefWidth="373.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab disable="true" text="Create Cell">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="88.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 1 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="140.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 2 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="192.0" prefHeight="52.0" prefWidth="201.0" text="Teacher 3 :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="244.0" prefHeight="52.0" prefWidth="201.0" text="Course Code:" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="296.0" prefHeight="52.0" prefWidth="201.0" text="Class Type :" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="teacherName1ComboBoxCurrent" layoutX="308.0" layoutY="100.0" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="320.0" promptText="Select Teacher 1" />
+                              <ComboBox fx:id="teacherName2ComboBoxCurrent" layoutX="308.0" layoutY="151.0" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="320.0" promptText="Select Teacher 2" />
+                              <ComboBox fx:id="teacherName3ComboBoxCurrent" layoutX="308.0" layoutY="203.0" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="320.0" promptText="Select Teacher 3" />
+                              <ComboBox fx:id="courseCodeComboBoxCurrent" layoutX="308.0" layoutY="255.0" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="320.0" promptText="Select Course" />
+                              <ComboBox fx:id="classTypeComboBoxCurrent" layoutX="308.0" layoutY="307.0" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="320.0" promptText="Select Class Type" />
+                              <Button fx:id="createButton" layoutX="258.0" layoutY="407.0" mnemonicParsing="false" onAction="#createButtonEvent" prefHeight="43.0" prefWidth="176.0" styleClass="submitButton" text="Create" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </content>
+</ScrollPane>
